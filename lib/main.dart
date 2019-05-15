@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'ContainerWithDecoration.dart';
-import 'StackSimple.dart';
+import 'CardWithStack.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
 //            child: new RandomWords(),
 //        ),
 //      ),
-      home: new MyStackScaffold(),
+      home: new MyCardScaffold(),
 
     );
   }
