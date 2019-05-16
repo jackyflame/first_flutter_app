@@ -63,9 +63,11 @@ class MyCardState extends State<MyCard>{
   Widget _buildColumText(){
     return new Expanded(
       child: new Container(
+        padding: EdgeInsets.all(8),
         decoration: new BoxDecoration(color: Colors.brown),
-        alignment: AlignmentDirectional.bottomStart,
+        alignment: AlignmentDirectional.centerStart,
         child:new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             _columTextItem("Number 10"),
