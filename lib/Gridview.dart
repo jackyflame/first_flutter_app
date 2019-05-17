@@ -7,7 +7,7 @@ class MyGridviewScaffold extends StatelessWidget {
       appBar: new AppBar(
         title: new Text("CardView"),
       ),
-      body: _buildGridview1(),
+      body: _buildGrid4(),
     );
   }
 
@@ -21,6 +21,55 @@ class MyGridviewScaffold extends StatelessWidget {
       //横轴间距
       crossAxisSpacing: 4,
       children: _buildGridList(30),
+    );
+  }
+
+  ///2.最常用的网格布局之count
+  Widget _buildGrid2() {
+    return new GridView.count(
+      //      横轴数量 这里的横轴就是x轴 因为方向是垂直的时候 主轴是垂直的
+      crossAxisCount: 2,
+      padding: const EdgeInsets.all(4.0),
+      //主轴间隔
+      mainAxisSpacing: 20.0,
+      //横轴间隔
+      crossAxisSpacing: 4.0,
+      children: _buildGridList(30),
+    );
+  }
+
+  ///3.滚动效果的ScrollView
+  Widget _buildGrid3() {
+    return new CustomScrollView(
+      primary: false,
+      slivers: <Widget>[
+        new SliverPadding(
+          padding: const EdgeInsets.all(20.0),
+          sliver: new SliverGrid.count(
+            crossAxisSpacing: 10.0,
+            //      横轴数量 这里的横轴就是x轴 因为方向是垂直的时候 主轴是垂直的
+            crossAxisCount: 2,
+            children: _buildGridList(30),
+          ),
+        ),
+      ],
+    );
+  }
+
+  ///.GridView.custom
+  Widget _buildGrid4(){
+    return GridView.custom(
+        gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 4,
+          crossAxisSpacing: 4
+        ), 
+        childrenDelegate: new SliverChildBuilderDelegate(
+            (context,index){
+              return new Image.asset("images/lake.jpg");
+            },
+          childCount: 30
+        ),
     );
   }
   
