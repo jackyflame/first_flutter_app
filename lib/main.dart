@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'Gridview.dart';
+import 'ShopingList.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
 //            child: new RandomWords(),
 //        ),
 //      ),
-      home: new MyGridviewScaffold(),
+      home: new MyShoppingListScaffold(),
 
     );
   }
